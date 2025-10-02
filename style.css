@@ -1,9 +1,11 @@
 :root{--bg:#fbfbff;--accent:#263066;--muted:#6b6f8c}
 *{box-sizing:border-box}
-body{margin:0;font-family:system-ui,Arial;background:var(--bg);color:#0f1724}
+body{margin:0;font-family:system-ui,Arial;background:var(--bg);color:#0f1724;opacity:0;animation:fadein .6s forwards}
+@keyframes fadein{to{opacity:1}}
 header{background:var(--accent);color:#fff;padding:28px 20px;text-align:center;display:flex;flex-direction:column;align-items:center}
-nav{margin-top:8px}
-main{max-width:980px;margin:36px auto;padding:0 18px}
-.projects-grid{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
-.project{background:#fff;padding:18px;border-radius:8px;box-shadow:0 8px 24px rgba(38,48,102,0.06);width:260px;transition:transform .22s}
+main{max-width:760px;margin:36px auto;padding:0 18px}
+.projects-grid{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;padding:8px}
+.project{background:#fff;padding:18px;border-radius:8px;width:260px;box-shadow:0 8px 24px rgba(38,48,102,0.06);transition:transform .22s}
 .project:hover{transform:translateY(-6px)}
+.project h3{margin-top:0;margin-bottom:8px;color:#212a66}
+.project::before{content:"";display:block;height:120px;background:linear-gradient(135deg,#eef2ff,#f8fafc);border-radius:6px;margin-bottom:12px}
