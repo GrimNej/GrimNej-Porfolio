@@ -9,4 +9,4 @@ document.addEventListener('DOMContentLoaded',function(){
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var href=this.getAttribute('href'); if(href && href.length>1){var t=document.querySelector(href); if(t){e.preventDefault(); t.scrollIntoView({behavior:'smooth'});}}});});
 window.appAnalytics={clicks:0,trackClick:function(){this.clicks++;console.log('clicks',this.clicks);}};
 document.addEventListener('click',function(){window.appAnalytics.trackClick()});
-console.log("prototype-portfolio: iteration 7 - mediaqueries: tiny visual tweaks for small screens");
+console.log("prototype-portfolio: iteration 8 - index: tidy html whitespace");
