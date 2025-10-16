@@ -9,4 +9,4 @@ document.addEventListener('DOMContentLoaded',function(){
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var href=this.getAttribute('href'); if(href && href.length>1){var t=document.querySelector(href); if(t){e.preventDefault(); t.scrollIntoView({behavior:'smooth'});}}});});
 window.appAnalytics={clicks:0,trackClick:function(){this.clicks++;console.log('clicks',this.clicks);}};
 document.addEventListener('click',function(){window.appAnalytics.trackClick()});
-console.log("prototype-portfolio: iteration 12 - style: tweak accent polish");
+console.log("prototype-portfolio: iteration 13 - style: adjust project card width");
