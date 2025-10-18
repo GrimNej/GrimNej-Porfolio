@@ -1,12 +1,26 @@
-// consolidated script
-document.addEventListener('DOMContentLoaded',function(){
-  var g=document.querySelector('.projects-grid');
-  if(g) g.innerHTML = '<article class="project"><h3>coming soon</h3><p>placeholder</p></article>';
-  var f=document.getElementById('contactForm');
-  if(f) f.addEventListener('submit',function(e){e.preventDefault();alert('Feature coming soon!');});
-  if(window.location.hash){var t=document.querySelector(window.location.hash); if(t) setTimeout(function(){ t.setAttribute('tabindex','-1'); t.focus(); },120);}
+// Toggles the hamburger menu open and closed on mobile
+function toggleMenu() {
+  const menu = document.querySelector(".menu-links");
+  const icon = document.querySelector(".hamburger-icon");
+  menu.classList.toggle("open");
+  icon.classList.toggle("open");
+}
+
+// Fade-in on scroll using IntersectionObserver
+const fadeElements = document.querySelectorAll(".fade-in");
+const fadeObserver = new IntersectionObserver(
+  function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        // stop observing once visible
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+fadeElements.forEach(function (el) {
+  fadeObserver.observe(el);
 });
-document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var href=this.getAttribute('href'); if(href && href.length>1){var t=document.querySelector(href); if(t){e.preventDefault(); t.scrollIntoView({behavior:'smooth'});}}});});
-window.appAnalytics={clicks:0,trackClick:function(){this.clicks++;console.log('clicks',this.clicks);}};
-document.addEventListener('click',function(){window.appAnalytics.trackClick()});
-console.log("prototype-portfolio: iteration 18 - script: finalize script log message");
